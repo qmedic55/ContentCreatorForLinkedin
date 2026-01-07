@@ -11,21 +11,32 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body {
-      height: 100vh;
-      width: 100vw;
-    }
-    openai-chatkit {
+    html, body {
       height: 100%;
       width: 100%;
-      display: block;
+    }
+    #chatkit-container {
+      height: 100%;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <openai-chatkit
-    workflow-id="wf_695d00aaeeec8190be988c62e0beb35a0e1087416d34aac7"
-    public-key="domain_pk_695e2a1612608193aa7156e8f882824b05c652b2ad35d2e4">
-  </openai-chatkit>
+  <div id="chatkit-container"></div>
+  <script>
+    window.addEventListener('load', function() {
+      const chatkit = document.createElement('openai-chatkit');
+      chatkit.style.height = '100%';
+      chatkit.style.width = '100%';
+      chatkit.style.display = 'block';
+      chatkit.setOptions({
+        api: {
+          workflowId: 'wf_695d00aaeeec8190be988c62e0beb35a0e1087416d34aac7',
+          domainKey: 'domain_pk_695e2a1612608193aa7156e8f882824b05c652b2ad35d2e4'
+        }
+      });
+      document.getElementById('chatkit-container').appendChild(chatkit);
+    });
+  </script>
 </body>
 </html>
