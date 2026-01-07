@@ -15,25 +15,16 @@
       height: 100%;
       width: 100%;
     }
-    #chatkit-container {
+    openai-chatkit {
       height: 100%;
       width: 100%;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="chatkit-container"></div>
-  <script>
-    window.addEventListener('load', function() {
-      const chatkit = document.createElement('openai-chatkit');
-      chatkit.style.height = '100%';
-      chatkit.style.width = '100%';
-      chatkit.style.display = 'block';
-      chatkit.setOptions({
-        workflowId: 'wf_695d00aaeeec8190be988c62e0beb35a0e1087416d34aac7'
-      });
-      document.getElementById('chatkit-container').appendChild(chatkit);
-    });
-  </script>
+  <openai-chatkit
+    data-workflow-id="wf_695d00aaeeec8190be988c62e0beb35a0e1087416d34aac7">
+  </openai-chatkit>
 </body>
 </html>
